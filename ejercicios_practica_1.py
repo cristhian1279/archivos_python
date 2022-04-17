@@ -107,7 +107,7 @@ def ej2():
         else:
              print("Vuelva a intentarlo..")
 
-        print('El stock final es:\n',stock)
+        print('STOCK:',stock)
         
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
