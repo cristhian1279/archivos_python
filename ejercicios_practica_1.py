@@ -9,7 +9,11 @@
 
 # Ejercicios con diccionarios
 
+from cgitb import strong
 import csv
+
+from numpy import append
+from paramiko import PasswordRequiredException
 
 
 def ej1():
@@ -18,7 +22,7 @@ def ej1():
     # el diccionario vacio debe llamarse "stock"
     
     # stock = ....
-
+    stock = {'ẗornillos':100 , 'tuercas': 150 , 'arandelas': 300}
     # Luego de crear el diccionario completelo
     # con el siguiente stock:
     # tornillos = 100
@@ -30,9 +34,9 @@ def ej1():
     # mientras que las cantidades son los valores (values)
 
     # Una vez armado el diccionario imprimirlo en pantalla con print
-
+    
     # Comenzar aquí, recuerde el identado dentro de esta funcion
-
+    print(stock)
 
 def ej2():
     print('Ejercicio con diccionarios 2º')
@@ -40,7 +44,7 @@ def ej2():
     # como una base de datos. Comenzaremos con un diccionario de stock
     # de nuestros productos en cero:
     
-    strock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
+    stock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
 
     # Paso 1:
     # Crear un bucle utilizando while que se ejecute de forma infinita
@@ -66,9 +70,46 @@ def ej2():
     # imprimir en pantalla con print el diccionario con el stock final
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
+    
+        
+    #agregar = ''
 
+    while True:
+        print('''Que producto desea agregar al stock?'
+        " 1 -.tornillos")
+        " 2 -.tuercas")
+        " 3 -.arandelas")
+        " 4-. FIN"   ''')
+        
+        agregar = input("Ingrese una opción en pantalla:")
+        
+        if agregar == "tornillos":
+            try:
+                stock['tornillos'] = int(input("ingrese cantidad:"))
+            except:
+                print("ERROR")
+                #_______--------______
+        elif agregar == 'tuercas':
+            try:
+                stock['tuercas'] = int(input("ingrese cantidad:"))
+            except:
+                print("ERROR")  
+                #_______--------______
+        elif agregar == 'arandelas':
+                try:
+                    stock['arandelas'] = int(input("ingrese cantidad:"))
+                except:
+                    print("ERROR")
+                #_______--------______ 
+        elif agregar == 'fin':
+                print("FINALIZA EL PROGRAMA")
+                break       
+        else:
+             print("Vuelva a intentarlo..")
 
+        print('El stock final es:\n',stock)
+        
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
-    ej1()
+    ej1()        
     ej2()
